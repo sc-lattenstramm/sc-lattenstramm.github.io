@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Die Mannschaft - SC Lattenstramm Ochtrup</title>
+  <style>
+    body {
+      background-color: #1a1a1a;
+      color: white;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      color: #ff0000;
+      position: relative;
+      display: inline-block;
+      cursor: default;
+    }
+    h1:hover::after {
+      content: "";
+      position: absolute;
+      top: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px;
+      height: 170px;
+      background-image: url('https://www.fussball.de/static/cms/5.00.42.1358/images/components/team/placeholder_team_image_890x500.png');
+      background-size: cover;
+      background-position: center;
+      border: 3px solid #ff0000;
+      border-radius: 10px;
+      z-index: 10;
+      box-shadow: 0 0 15px #ff0000aa;
+    }
+
+    .mannschaft-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin-top: 40px;
+    }
+
+    .spieler {
+      max-width: 400px;
+      width: 100%;
+      margin: 0;
+      padding: 10px 15px;
+      border: 1px solid #ff0000;
+      border-radius: 8px;
+      font-size: 1.2em;
+      cursor: pointer;
+      text-align: left; /* Text linksbündig in Box */
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .nummer {
+      flex: 0 0 40px; /* feste Breite für Nummern-Spalte */
+      text-align: right;
+      font-weight: bold;
+      color: #ff0000;
+    }
+
+    .info {
+      flex: 1; /* nimmt verbleibenden Platz ein */
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .name-trikot {
+      /* Name, der im Normalzustand angezeigt wird */
+    }
+
+    .name-richtig {
+      display: none;
+      font-size: 1em;
+      color: #ffffff;
+      margin-top: 4px;
+    }
+
+    .spieler:hover .name-richtig {
+      display: block;
+    }
+
+    .spieler img {
+      width: 120px;
+      height: 120px;
+      border-radius: 10px;
+      border: 3px solid #ff0000;
+      margin-left: 10px;
+      opacity: 0;
+      max-height: 0;
+      transition: opacity 0.3s ease, max-height 0.3s ease;
+      overflow: hidden;
+    }
+
+    .spieler:hover img {
+      opacity: 1;
+      max-height: 150px;
+    }
+
+    a {
+      color: #ff0000;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 40px;
+      font-size: 1.1em;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 480px) {
+      .spieler {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+      }
+      .nummer {
+        text-align: left;
+        flex: none;
+      }
+      .spieler img {
+        width: 90px;
+        height: 90px;
+        margin-left: 0;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Die Mannschaft</h1>
+
+  <div class="mannschaft-container">
+    <div class="spieler">
+      <span class="nummer">7</span>
+      <div class="info">
+        <span class="name-trikot">D. Dauerdicht</span>
+        <span class="name-richtig">Daniel</span>
+      </div>
+      <img src="https://st4.depositphotos.com/9998432/22670/v/450/depositphotos_226700318-stock-illustration-person-gray-photo-placeholder-man.jpg" alt="D. Dauerdicht">
+    </div>
+
+    <div class="spieler">
+      <span class="nummer">10</span>
+      <div class="info">
+        <span class="name-trikot">Grillmeister</span>
+        <span class="name-richtig">Nico</span>
+      </div>
+      <img src="https://st4.depositphotos.com/9998432/22670/v/450/depositphotos_226700318-stock-illustration-person-gray-photo-placeholder-man.jpg" alt="Grillmeister / Nico">
+    </div>
+
+    <div class="spieler">
+      <span class="nummer">13</span>
+      <div class="info">
+        <span class="name-trikot">Dooby</span>
+        <span class="name-richtig">Mark</span>
+      </div>
+      <img src="https://st4.depositphotos.com/9998432/22670/v/450/depositphotos_226700318-stock-illustration-person-gray-photo-placeholder-man.jpg" alt="Dooby">
+    </div>
+
+    <div class="spieler">
+      <span class="nummer">17</span>
+      <div class="info">
+        <span class="name-trikot">Kippermanni</span>
+        <span class="name-richtig">Luis</span>
+      </div>
+      <img src="https://st4.depositphotos.com/9998432/22670/v/450/depositphotos_226700318-stock-illustration-person-gray-photo-placeholder-man.jpg" alt="Kippermanni">
+    </div>
+
+    <div class="spieler">
+      <span class="nummer">20</span>
+      <div class="info">
+        <span class="name-trikot">Robinaldo</span>
+        <span class="name-richtig">Robin</span>
+      </div>
+      <img src="https://st4.depositphotos.com/9998432/22670/v/450/depositphotos_226700318-stock-illustration-person-gray-photo-placeholder-man.jpg" alt="Robinaldo">
+    </div>
+
+    <div class="spieler">
+      <span class="nummer">23</span>
+      <div class="info">
+        <span class="name-trikot">PilsPirat</span>
+        <span class="name-richtig">Fiete</span>
+      </div>
+      <img src="https://st4.depositphotos.com/9998432/22670/v/450/depositphotos_226700318-stock-illustration-person-gray-photo-placeholder-man.jpg" alt="PilsPirat">
+    </div>
+
+    <div class="spieler">
+      <span class="nummer">26</span>
+      <div class="info">
+        <span class="name-trikot">Ransi</span>
+        <span class="name-richtig">Phil</span>
+      </div>
+      <img src="https://st4.depositphotos.com/9998432/22670/v/450/depositphotos_226700318-stock-illustration-person-gray-photo-placeholder-man.jpg" alt="Ransi">
+    </div>
+
+    <div class="spieler">
+      <span class="nummer">28</span>
+      <div class="info">
+        <span class="name-trikot">Bussenbuer</span>
+        <span class="name-richtig">Felix</span>
+      </div>
+      <img src="https://st4.depositphotos.com/9998432/22670/v/450/depositphotos_226700318-stock-illustration-person-gray-photo-placeholder-man.jpg" alt="Bussenbuer">
+    </div>
+
+    <div class="spieler">
+      <span class="nummer">51</span>
+      <div class="info">
+        <span class="name-trikot">Bierland</span>
+        <span class="name-richtig">Moritz</span>
+      </div>
+      <img src="https://st4.depositphotos.com/9998432/22670/v/450/depositphotos_226700318-stock-illustration-person-gray-photo-placeholder-man.jpg" alt="Bierland">
+    </div>
+
+    <div class="spieler">
+      <span class="nummer">69</span>
+      <div class="info">
+        <span class="name-trikot">Anal Admiral</span>
+        <span class="name-richtig">Matthis</span>
+      </div>
+      <img src="https://st4.depositphotos.com/9998432/22670/v/450/depositphotos_226700318-stock-illustration-person-gray-photo-placeholder-man.jpg" alt="Anal Admiral">
+    </div>
+  </div>
+
+  <a href="file:///C:/Users/gemen/Desktop/Neuer%20Ordner/index.html">Zurück zur Startseite</a>
+</body>
+</html>
